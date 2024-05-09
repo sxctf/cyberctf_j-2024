@@ -1,0 +1,45 @@
+version: '2.16'
+
+services:
+  speed-system:
+    restart: always
+    container_name: speed-system
+    build: ./
+    environment:
+      - DBUSER=${DBUSER}
+      - DBPASS=${DBPASS}
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+  
+  mysql-db:
+    command: [ "--max_connections=2000" ]
+    image: mysql:latest
+    container_name: db-task3
+    restart: always
+    healthcheck:
+      test: curl --fail http://127.0.0.1:3306 || exit 1
+      interval: 10s
+      retries: 3
+      start_period: 5s
+      timeout: 10s
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROOTDB}
+    ports:
+      - 3306:3306
+  
+  nginx-srv:
+    image: nginx:latest
+    container_name: spd-nginx
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./app:/app
+    ports:
+      - 8003:8003
+    depends_on:
+      - speed-system
+
+    

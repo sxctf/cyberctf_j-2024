@@ -1,0 +1,68 @@
+<html>
+<title>Продукты</title>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=10">
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+    {% block content %} 
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="profile">Профиль</a></li>
+            <li><a href="basket">Корзина</a></li>
+            <li><a href="logout">Выход</a></li>
+            
+        </ul>
+    </nav> 
+    {%endblock%} 
+</head> 
+<body> 
+    <style>
+        body
+        {
+            background-image: url({{url_for('static',filename='images/main.jpg')}})
+        }
+    </style>
+    <div id = footer>
+        {%block footer%}
+       
+        {%endblock%}
+    </div>
+    <table class = "table">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <tr class = "table__header">
+            {% for header in headings %}
+            <th class = "table__cell"> {{ header }}</th>
+            {%endfor%}
+        </tr>
+        {%for row in data%}
+        <tr class = "table__row">
+            {% for cell in row %}
+            <td class = "table__cell">{{ cell }}</td>
+            {%endfor%}
+            <form action = "#" method = "POST">
+                <input id = "product_id" name = "product_id"
+                        type = "hidden" value = "{{row[0]}}">
+                <td><input type = "submit" value = "Купить" name = "{{row[0]}}" formmethod="POST"></td>
+            </form>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+<main>
+
+</main>
+<footer>
+    <div class="footer">&copy;<span> CyberCTF </span></div>
+</footer>
+</html>

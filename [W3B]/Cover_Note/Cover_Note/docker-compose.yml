@@ -1,0 +1,9 @@
+version: '2.16'
+
+services:
+  fourth-task:
+    container_name: cover-note
+    restart: always
+    build: ./
+    ports:
+      - 8004:8080

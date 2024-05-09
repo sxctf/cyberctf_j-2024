@@ -1,0 +1,75 @@
+
+<html lang="ru">
+<head>
+    <title>Все Инструменты</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=10">
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+    {% block content %} 
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="login">Вход</a></li>
+            <li><a href="registration">Регистрация</a></li>
+        </ul>
+    </nav> 
+
+    {%endblock%} 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</head> 
+<body> 
+    <style>
+        body
+        {
+            background-image: url({{url_for('static',filename='images/main.jpg')}})
+        }
+    </style>
+    <div class="infoText">
+        <span> 
+            <pre></pre>
+            <pre>  Вас приветствует магазин Все Инструменты!</pre>
+            <pre>  Наш магазин пользуется популярностью, </pre>
+            <pre>  Последние заказы магазина представлены в таблице </pre>
+            <pre>  Для создания заказа пройдите регистрацию</pre>
+            <pre></pre>
+        </span></div>
+    <table class = "table">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <tr class = "table__header">
+            {% for header in headings %}
+            <th class = "table__cell"> {{ header }}</th>
+            {%endfor%}
+        </tr>
+        {%for row in data%}
+        <tr class = "table__row">
+            {% for cell in row %}
+            <td class = "table__cell">{{ cell }}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+<main>
+    
+</main>
+<footer>
+    <div class="footer">&copy;<span> CyberCTF </span></div>
+</footer>
+</html>

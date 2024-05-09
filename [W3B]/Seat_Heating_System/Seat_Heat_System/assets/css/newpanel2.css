@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+html {
+    background-image: url("../images/screen.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.urltransfer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: wheat; */
+    color: white;
+    width: 400px;
+    height: 100px;
+    position: relative;
+    left: 400px;
+    margin-top: 160px;
+    font-family: Tomorrow, sans-serif;
+}
+
+
+.textbox{
+  color: rgb(189, 0, 0);
+  width: 300px;
+  height: 50px;
+  background-color: rgb(239, 222, 222, .9);
+  border-color: rgb(153, 0, 0, .3);
+  border-radius: 7px;
+  font-family: Tomorrow, sans-serif; 
+  font-size: 16px;
+}
+
+.btn{
+  font-family: Tomorrow, sans-serif; 
+  border-color: brown;
+  background-color: red;
+  opacity: 0.7;
+  border-radius: 5px;
+}

@@ -1,0 +1,4 @@
+Flask==3.0.0
+Flask-Login==0.6.3
+PyJWT==1.5.3
+regex==2023.12.25

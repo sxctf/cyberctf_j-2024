@@ -1,0 +1,8 @@
+services:
+  server:
+    restart: always
+    build:
+      context: .
+    ports:
+      - 8002:8002
+

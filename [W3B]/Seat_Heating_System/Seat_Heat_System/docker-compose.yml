@@ -1,0 +1,32 @@
+version: '2.16'
+
+services:
+  second-task:
+    container_name: seating-heat-node
+    restart: always
+    build: ./
+    ports:
+      - 8002:8080
+    networks:
+         mynet:
+          ipv4_address: 192.168.0.7
+  
+
+  secondtask-subserver:
+    container_name: seating-heat-sub-node
+    restart: always
+    build: ./subserver
+    depends_on:
+      - second-task
+    ports:
+    - 8888:8888
+    networks:
+         mynet:
+          ipv4_address: 192.168.0.6
+  
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+        config:
+          - subnet: 192.168.0.0/16

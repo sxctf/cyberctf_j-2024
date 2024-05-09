@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+<title>Input and Buttons</title>
+
+<div class = "flashed_messages">
+{% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+{% endwith %}
+</div>
+</head>
+<body>
+
+<div class="trainsLabel">
+  <div class="child">
+    Текущий поезд
+  </div>
+  <div class="child">
+    Предыдущий поезд
+  </div>
+</div>
+<div class="parent">
+  <div class="child"> 
+    <pre> code: {{lGuid}}</pre>
+    <pre> time: {{lTime}}</pre>
+    <pre> type: {{lType}}</pre>
+    <pre> maxSpeed: {{lSpeed}}</pre>
+    <pre> maxPassengers: {{lPass}}</pre>
+  </div>
+  <div class="child">
+    <pre> code: {{rGuid}}</pre>
+    <pre> time: {{rTime}}</pre>
+    <pre> type: {{rType}}</pre>
+    <pre> maxSpeed: {{rSpeed}}</pre>
+    <pre> maxPassengers: {{rPass}}</pre>
+  </div>
+</div>
+  
+<form action ="#" method="POST">
+  <div class="input-container">
+  <input type="text" maxlength="40" placeholder="Введите параметр, который нужно изменить, используя тэги. Например: <train>express</train>" name = tagInput>
+  </div>
+
+  <div class="button-container">
+    <button class = "Yes_Button" type = "submit" name = "Yes_Button">Следующий поезд</button>
+  </div>
+</form>
+
+</body>
+</html>

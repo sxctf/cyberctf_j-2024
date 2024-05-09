@@ -1,0 +1,77 @@
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+button {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #ddd;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+.infoText {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0D1321;
+    color: #FFEDDF;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    text-align: center;
+    margin: auto;
+  }
+.ButtonStart{
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.trainsLabel {
+    display: flex;
+    position: relative;
+    grid-auto-columns: 1fr;
+    overflow: hidden;
+    border: 1px dashed var(--parent-border);  
+    text-align: center;
+}
+.parent {
+    display: flex;
+    position: relative;
+    grid-auto-columns: 1fr;
+    overflow: hidden;
+    border: 1px dashed var(--parent-border);    
+}
+.child {
+    position: relative;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    width: 50%;
+    padding: .5rem;
+    align-self: left;
+    box-sizing: border-box;
+    background-color: var(--demo-bg);
+    border: 1px solid var(--demo-border);
+}

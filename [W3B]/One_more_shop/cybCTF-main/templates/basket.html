@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">    
+<html lang="ru">
+        <title>Корзина</title>
+        {% block content %} 
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="products">Продукты</a></li>
+                <li><a href="profile">Профиль</a></li>
+                <li><a href="logout">Выход</a></li>
+            </ul>
+        </nav> 
+        {%endblock%} 
+        <body> 
+            <style>
+                body
+                {
+                    background-image: url({{url_for('static',filename='images/main.jpg')}})
+                }
+            </style>
+            <div id = footer>
+                {%block footer%}
+               
+                {%endblock%}
+            </div>
+            <table class = "table">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                <tr class = "table__header">
+                    {% for header in headings %}
+                    <th class = "table__cell"> {{ header }}</th>
+                    {%endfor%}
+                </tr>
+                {%for row in data%}
+                <tr class = "table__row">
+                    {% for cell in row %}
+                    <td class = "table__cell">{{ cell }}</td>
+                    {%endfor%}
+                </tr>
+                {%endfor%}
+                <form action = "#" method = "POST">
+                    <td><input type = "submit" value = "Заказать" formmethod="POST"></td>
+                </form>
+            </table>
+        </body>
+        
+        <main>
+        
+        </main>
+        </html>

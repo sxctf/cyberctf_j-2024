@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+body
+{
+  background-color: rgba(0, 0, 0, 0.834);
+}
+.container
+{
+  text-align: center;
+  padding: 15px;  
+}
+.left-div
+{
+  display: inline-block;
+  max-width: 300px;
+  text-align: left;
+  padding: 30px;
+  background-color: #8EF160;
+  border-radius: 5px;
+  margin: 150px;
+  vertical-align: top;
+}
+
+
+.left-text
+{
+  font: 16px 'Tomorrow', monospace;
+	/* color: #6495ED;*/
+  color: black;
+  text-align: justify;
+}
+
+.p{
+  text-align: justify;
+}
+@media screen and (max-width: 600px) 
+{
+  .left-div
+    {
+       max-width: 100%;
+    }
+}

@@ -1,0 +1,7 @@
+services:
+  server:
+    restart : always
+    build:
+      context: .
+    ports:
+      - 8003:8003

@@ -1,0 +1,89 @@
+html {
+    background-image: url("../images/359ea0ab-3b3d-4b18-b979-74c84c2aec3a.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+    opacity: 0.9;
+  }
+
+
+.monitor {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/monitor.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 140px;
+}
+
+.container {
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.container img {
+    width:auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.green {
+    content: url("../images/green.png");
+
+}
+
+.purple {
+    content: url("../images/purpule.png");
+
+}
+
+.red {
+    content: url("../images/red.png");
+
+}
+
+
+.btn-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.btn{
+    border-radius: 5px;
+    background: var(--color);
+    cursor: pointer;
+
+    width: 100px;
+    height: 40px;
+}
+
+.btn-1{
+
+    --color: rgb(181, 1, 1, 0.8);
+}
+
+.btn-2{
+    --color: rgba(0, 128, 0, 0.8);
+}
+
+.btn-3{
+    --color: rgba(128, 37, 198, 0.8);
+    flag: "ZmxhZ3t3dllCcGpxTVpYT0ExazBifQ==";
+}
+
+
+

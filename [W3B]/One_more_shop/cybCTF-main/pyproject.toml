@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bin"
+version = "0.1.0"
+description = ""
+authors = ["p1zza <vovaragulin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.2"
+flask-login = "^0.6.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

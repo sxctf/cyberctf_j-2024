@@ -1,0 +1,9 @@
+version: '2.16'
+
+services:
+  first-task:
+    container_name: color-changer
+    restart: always
+    build: ./
+    ports:
+      - 8001:8080

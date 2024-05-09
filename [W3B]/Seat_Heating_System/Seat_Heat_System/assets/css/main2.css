@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+html {
+    background-image: url("/app/assets/images/screen2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: center;
+    -moz-background-size: center;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+.answer{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 40px;
+  top: 250px;
+  align-items: center;
+  justify-content: center;
+}
+
+p{
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  font-family: Tomorrow, sans-serif;
+}

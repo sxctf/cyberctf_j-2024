@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <html lang="ru">
+        <style>
+            body
+            {
+                background-image: url({{url_for('static',filename='images/main.jpg')}})
+            }
+        </style>        
+        <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+        <title>Profile</title>
+        {% block content %} 
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="products">Продукты</a></li>
+                <li><a href="profile">Профиль</a></li>
+                <li><a href="basket">Корзина</a></li>
+                <li><a href="logout">Выход</a></li>
+            </ul>
+        </nav> 
+        {%endblock%} 
+        <div class="infoText">
+            <span> 
+                <pre></pre>
+                <pre>  Уважаемый пользователь, Добрый день! </pre>
+                <pre>  Список последних заказов доступен </pre>
+                <pre>  во вкладке Профиль</pre>
+                <pre></pre>
+            </span></div>
+        <main> 
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}  
+        <div id="profileMessage" class="profileHello">
+            <ol>
+                <li>Добро пожаловать: {{context.username}}</li>
+            </ol>
+        </div>
+        <table class = "table">
+            <tr class = "table__header">
+                {% for header in headings %}
+                <th class = "table__cell"> {{ header }}</th>
+                {%endfor%}
+            </tr>
+            {%for row in data%}
+            <tr class = "table__row">
+                {% for cell in row %}
+                <td class = "table__cell">{{ cell }}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+    </main>
+    <footer>
+        <div class="footer">&copy;<span> CyberCTF </span></div>
+    </footer>
+</html>
